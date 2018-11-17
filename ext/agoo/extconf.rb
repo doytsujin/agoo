@@ -11,6 +11,8 @@ $CFLAGS += " -DPLATFORM_LINUX" if 'x86_64-linux' == RUBY_PLATFORM
 CONFIG['warnflags'].slice!(/ -Wsuggest-attribute=format/)
 
 have_header('stdatomic.h')
+#have_header('sys/epoll.h')
+#have_header('sys/events.h') # for kqueue use on macOS
 
 create_makefile(File.join(extension_name, extension_name))
 
